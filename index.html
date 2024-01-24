@@ -90,11 +90,23 @@
         <input type="text" name="name" placeholder="اكتب اسمك بالعربي بس">
         <button>بدء</button>
     <script> 
-    document.querySelector('button').addEventListener('click', () => {
-        localStorage.setItem('gameName',document.querySelector('input').value);
-        location.href = '/log.html'
-    })
-    setTimeout(() => {
+        window.screen.orientation.addEventListener('orientationchange', function() {
+    // احصل على قيمة orientation
+    const orientation = window.screen.orientation;
+
+    // تحقق مما إذا كانت قيمة orientation تساوي LANDSCAPE
+    if (orientation === "landscape") {
+        const video = document.createElement('video');
+        video.src = 'imgs/rotate.mp4'
+        video.autoplay = true;
+        video.loop = true;
+        video.className = 'rotate';
+        document.body.appendChild(video)
+    } else {
+        if (document.querySelector('.rotate')) {
+            document.querySelector('.rotate').remove();
+        }
+            setTimeout(() => {
         const video = document.createElement('video');
         video.src = 'imgs/intro.mp4';
         video.autoplay = true;
@@ -104,6 +116,12 @@
         }
         document.body.appendChild(video);
     }, 13000);
+    }
+});
+    document.querySelector('button').addEventListener('click', () => {
+        localStorage.setItem('gameName',document.querySelector('input').value);
+        location.href = '/log.html'
+    })
     </script>
 </body>
 </html>
