@@ -115,6 +115,7 @@
             source.type = "video/mp4";
             video.appendChild(source);
             video.autoplay = true;
+            video.controls = true
             video.onended = function () {
             video.remove();
                 document.querySelectorAll('div').forEach( e => e.remove());
