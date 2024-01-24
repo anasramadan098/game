@@ -108,15 +108,18 @@
         }
     }
 });
-                    setTimeout(() => {
-        const video = document.createElement('video');
-        video.src = 'imgs/intro.mp4';
-        video.autoplay = true;
-        video.onended = function () {
+        setTimeout(() => {
+            const video = document.createElement('video');
+            const source = document.createElement('source');
+            source.src = 'imgs/intro.mp4';
+            source.type = "video/mp4";
+            video.appendChild(source);
+            video.autoplay = true;
+            video.onended = function () {
             video.remove();
-            document.querySelectorAll('div').forEach( e => e.remove());
-        }
-        document.body.appendChild(video);
+                document.querySelectorAll('div').forEach( e => e.remove());
+            }
+            document.body.appendChild(video);
     }, 13000);
     document.querySelector('button').addEventListener('click', () => {
         localStorage.setItem('gameName',document.querySelector('input').value);
