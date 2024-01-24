@@ -149,7 +149,7 @@ function textBoxFrom(ele,charachter,text,content) {
             }
         } else if (content == xAndCharachterWithHend) {
             if (content[currentIndex] == undefined) {
-                location.href = '/test.html'
+                location.href.split('game')[0] + 'game' + '/test.html'
                 ele.remove();
             } else {
                 textBoxFrom(ele,xAndCharachterWithHend[currentIndex].c,xAndCharachterWithHend[currentIndex].p,xAndCharachterWithHend);
