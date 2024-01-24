@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'El Messiri', sans-serif;
+}
+body {
+    font-family: 'El Messiri', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+:root {
+    --primary-color: #b389d9 ;
+    --secondary-color: #f0f0f0;
+    --highlight-color: #2e8b57   ;
+}
+/*  */
+
+body {
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    padding: 30px;
+}
+.welcome {
+    position: relative;
+    margin: 30px auto;
+    padding: 20px 40px;
+    text-align: center;
+    width: fit-content;
+    background-color: var(--highlight-color);
+    border-radius: 30px;
+}
+.welcome h1 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+.welcome p {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    line-height: 2;
+}
+.boxes {
+    padding: 100px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.box {
+    width: calc(100% / 3 - 30px);
+    background: var(--highlight-color);
+    padding: 30px;
+    color: var(--secondary-color);
+}
+.box i{
+    font-size: 2em;
+    color: var(--secondary-color);
+}
+.box h3{
+    color: var(--secondary-color);
+    font-size: 1.3em;
+    margin: 20px 0;
+}
+.box button {
+    background: transparent;
+    border: 3px solid var(--primary-color);
+    padding: 10px 15px;
+    color: #fff;
+    margin: 15px 15px 0 0;
+    transition: .3s;
+    cursor: pointer;
+}
+.box button:hover {
+    color: #000;
+    background-color: var(--highlight-color);
+}
+.content-step {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px 50px;
+    text-align: right;
+    direction: rtl;
+}
+.content-step li {
+    direction: rtl !important;
+}
+.excersice-step {
+    width: 100%;
+    background: #eee;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.excersice-step h2 {
+    font-size: 2.3em;
+    font-weight: bold;
+}
+.excersice-step .test {
+    background: #fff;
+    padding: 15px;
+    border-radius: 3px;
+}
+.excersice-step .test .answersDiv {
+    display: flex;
+    padding: 10px;
+    gap: 100px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+.excersice-step .test .answersDiv input {
+    margin-left: 10px;
+}
+.excersice-step .test h3 {
+    font-size: 1.3em;
+}
+.excersice-step .check-btn {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 40px;
+    border: 1px solid var(--secondary-color);
+    transition: .3s;
+    cursor: pointer;
+}
+.excersice-step .check-btn:hover {
+    border-width:3px ;
+    box-shadow: 6px 6px 10px rgba(0,0,0,.2), -6px -6px
+    10px rgba(255,255,255,.8) , inset 0 0
+    10px rgba(255,255,255,.7);
+}
+
+.title {
+    font-size: 3em;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+}
+form input,
+form select {
+    padding: 20px;
+    border-radius: 6px;
+    outline: none;
+    border: 3px dashed var(--primary-color);
+}
+form input[type="submit"] {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: .3s;
+}
+form input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+textarea {
+    font-family: 'El Messiri', sans-serif !important;
+}
+
+/* Results Styles */
+.result {   
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+.result h3 {
+    font-size: 3em;
+    color: #673AB7;
+}
+.result > span {
+    font-size: 4em;
+    font-weight: bold;
+    color: #9C27B0;
+}
+.result .close-btn {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    padding: 10px 40px;
+    background: #FFEB3B;
+    border: none;
+    border-radius: 6px;
+    color: #673AB7;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+.result .close-btn:hover {
+    background-color: #673AB7;
+    color: #FFEB3B;
+}
+.result .degree-div {
+    background: #eee;
+    padding: 15px;
+}
+.result .degree-div p {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: .3s;
+}
+.result .degree-div p:hover {
+    transform: scale(0.9);
+}
+.result .degree-div p.true {
+    color: green;
+}
+.result .degree-div p.false {
+    color: red;
+}
+.result .degree-div p span {
+    font-weight: bold;
+    color: #000;
+}
+@media (max-width:767px) {
+    body,
+    .boxes {
+        padding: 0;
+    }
+    .excersice-step h2,
+    .result h3 {
+        font-size: 2em;
+    }
+    .result .close-btn {
+        left: 5px;
+        top: 5px;
+        padding: 10px;
+    }
+    .result {
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <script src="excersice.js"></script>
+</body>
+</html>
