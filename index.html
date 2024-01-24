@@ -106,7 +106,9 @@
         if (document.querySelector('.rotate')) {
             document.querySelector('.rotate').remove();
         }
-            setTimeout(() => {
+    }
+});
+                    setTimeout(() => {
         const video = document.createElement('video');
         video.src = 'imgs/intro.mp4';
         video.autoplay = true;
@@ -116,8 +118,6 @@
         }
         document.body.appendChild(video);
     }, 13000);
-    }
-});
     document.querySelector('button').addEventListener('click', () => {
         localStorage.setItem('gameName',document.querySelector('input').value);
         location.href = '/log.html'
