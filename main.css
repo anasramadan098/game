@@ -58,7 +58,7 @@ body {
     align-items: center;
     .imgs {
         width: 100%;
-        display: none;
+        display: flex;
         justify-content: space-between;
         .slide {
             display: flex;
@@ -74,7 +74,7 @@ body {
     }
 }
 .textbox {
-max-height: 150px;
+    max-height: 150px;
     min-height: 150px;
     overflow: scroll;
     border-radius: 5px;
