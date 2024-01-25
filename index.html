@@ -66,7 +66,6 @@
             background-image: url(imgs/game-bg.jpeg);
         }
         .U2-bg {
-            background-image: url(imgs/U2-bg.jpeg);
             animation-delay: 5s;
         }
         video {
@@ -84,7 +83,7 @@
                 opacity: 1;
             }
         }
-                .full {
+        .full {
             position: absolute;
             top: 0;
             left: 0;
@@ -108,6 +107,7 @@
             <a href="#" class="fullScreen">Full Screen</a>
         </div>
     <script> 
+    
     document.querySelector('.fullScreen').addEventListener('click',function(e) {
         this.parentElement.remove();
         if (document.fullscreenElement) {
@@ -116,9 +116,11 @@
             document.documentElement.requestFullscreen();
         }
         // Create Elements
-        const gameBg = document.createElement('div');
-        gameBg.className = 'bg game-bg';
-        const U2bg = document.createElement('div');
+        const gameBg = document.createElement('img');
+        gameBg.src = 'imgs/game-bg.jpeg';
+        gameBg.className = 'bg';
+        const U2bg = document.createElement('img');
+        U2bg.src = 'imgs/U2-bg.jpeg';
         U2bg.className = 'bg U2-bg';
         document.body.appendChild(gameBg)
         document.body.appendChild(U2bg);
@@ -129,22 +131,22 @@
         btn.innerHTML = 'بدء';
         btn.addEventListener('click',function() {
             localStorage.setItem('gameName',document.querySelector('input').value);
-            location.href = location.href + '/log.html'
+            location.href = '/log.html'
         })
         document.body.appendChild(input)
         document.body.appendChild(btn);
-            setTimeout(() => {
-        const video = document.createElement('video');
-        video.src = 'imgs/intro.mp4';
-        video.autoplay = true;
-        video.onended = function () {
-            video.remove();
-            document.querySelectorAll('div').forEach( e => e.remove());
-        }
-        document.body.appendChild(video);
-    }, 12500);
+        setTimeout(() => {
+            const video = document.createElement('video');
+            video.src = 'imgs/intro.mp4';
+            video.autoplay = true;
+            video.controls = true;
+            video.onended = function () {
+                video.remove();
+                document.querySelectorAll('div').forEach( e => e.remove());
+            }
+            document.body.appendChild(video);
+        }, 12500);
     })
-
     </script>
 </body>
 </html>
