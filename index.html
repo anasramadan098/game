@@ -131,7 +131,9 @@
         btn.innerHTML = 'بدء';
         btn.addEventListener('click',function() {
             localStorage.setItem('gameName',document.querySelector('input').value);
-            location.href = '/log.html'
+                const a = document.createElement('a');
+                a.href = 'log.html'
+                a.click();
         })
         document.body.appendChild(input)
         document.body.appendChild(btn);
