@@ -84,48 +84,66 @@
                 opacity: 1;
             }
         }
-    </style>
-        <div class="bg game-bg"></div>
-        <div class="bg U2-bg"></div>
-        <input type="text" name="name" placeholder="اكتب اسمك بالعربي بس">
-        <button>بدء</button>
-    <script> 
-        window.screen.orientation.addEventListener('orientationchange', function() {
-    // احصل على قيمة orientation
-    const orientation = window.screen.orientation;
-
-    // تحقق مما إذا كانت قيمة orientation تساوي LANDSCAPE
-    if (orientation === "landscape") {
-        const video = document.createElement('video');
-        video.src = 'imgs/rotate.mp4'
-        video.autoplay = true;
-        video.loop = true;
-        video.className = 'rotate';
-        document.body.appendChild(video)
-    } else {
-        if (document.querySelector('.rotate')) {
-            document.querySelector('.rotate').remove();
-        }
-    }
-});
-        setTimeout(() => {
-            const video = document.createElement('video');
-            const source = document.createElement('source');
-            source.src = 'imgs/intro.mp4';
-            source.type = "video/mp4";
-            video.appendChild(source);
-            video.autoplay = true;
-            video.controls = true
-            video.onended = function () {
-            video.remove();
-                document.querySelectorAll('div').forEach( e => e.remove());
+                .full {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0, 0,.7);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                font-size: 3em;
+                color: #fff;
+                text-decoration: none;
+                border: 2px solid;
+                padding: 15px;
+                border-radius: 10px;
             }
-            document.body.appendChild(video);
-    }, 13000);
-    document.querySelector('button').addEventListener('click', () => {
-        localStorage.setItem('gameName',document.querySelector('input').value);
-        location.href += '/log.html'
+        }
+    </style>
+        <div class="full">
+            <a href="#" class="fullScreen">Full Screen</a>
+        </div>
+    <script> 
+    document.querySelector('.fullScreen').addEventListener('click',function(e) {
+        this.parentElement.remove();
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+        // Create Elements
+        const gameBg = document.createElement('div');
+        gameBg.className = 'bg game-bg';
+        const U2bg = document.createElement('div');
+        U2bg.className = 'bg U2-bg';
+        document.body.appendChild(gameBg)
+        document.body.appendChild(U2bg);
+        const input = document.createElement('input')
+        input.name = 'name';
+        input.placeholder = "اكتب اسمك بالعربي بس"
+        const btn = document.createElement('button');
+        btn.innerHTML = 'بدء';
+        btn.addEventListener('click',function() {
+            localStorage.setItem('gameName',document.querySelector('input').value);
+            location.href = '/log.html'
+        })
+        document.body.appendChild(input)
+        document.body.appendChild(btn);
     })
+    setTimeout(() => {
+        const video = document.createElement('video');
+        video.src = 'imgs/intro.mp4';
+        video.autoplay = true;
+        video.onended = function () {
+            video.remove();
+            document.querySelectorAll('div').forEach( e => e.remove());
+        }
+        document.body.appendChild(video);
+    }, 12500);
     </script>
 </body>
 </html>
