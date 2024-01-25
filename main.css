@@ -58,7 +58,7 @@ body {
     align-items: center;
     .imgs {
         width: 100%;
-        display: flex;
+        display: none;
         justify-content: space-between;
         .slide {
             display: flex;
