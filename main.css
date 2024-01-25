@@ -57,7 +57,7 @@ body {
     flex-direction: column;
     align-items: center;
     .imgs {
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         .slide {
@@ -67,7 +67,7 @@ body {
                 direction: rtl;
             }
             img {
-                max-width: 300px;
+                max-width: 180px;
                 max-height: 300px;
             }
         }
@@ -79,7 +79,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     width: 90%;
-    margin: -20px 0 30px;
+    margin: -20px 30px;
     background-color: var(--main-color);
     position: relative;
     display: flex;
@@ -89,6 +89,12 @@ body {
     text-align: right;
     animation: translateXRight .3s linear;
     justify-content: space-between;
+
+    &.intro {
+        position: absolute;
+        margin: 0;
+        bottom: 30%;
+    }
     .btn {
         cursor: pointer;
     }
@@ -99,7 +105,7 @@ body {
         font-weight: bold;
     }
     p {
-        font-size: 20px;
+        font-size: 0.9em;
         color: #673AB7;
     }
 }
