@@ -142,7 +142,7 @@
             video.controls = true;
             video.onended = function () {
                 video.remove();
-                document.querySelectorAll('div').forEach( e => e.remove());
+                document.querySelectorAll('img').forEach( e => e.remove());
             }
             document.body.appendChild(video);
         }, 12500);
