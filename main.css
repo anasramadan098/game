@@ -57,7 +57,7 @@ body {
     flex-direction: column;
     align-items: center;
     .imgs {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         .slide {
@@ -67,8 +67,8 @@ body {
                 direction: rtl;
             }
             img {
-                max-width: 50px;
-                max-height: 50px;
+                max-width: 10px;
+                max-height: 10px;
             }
         }
     }
@@ -94,6 +94,7 @@ body {
         position: absolute;
         margin: 0;
         bottom: 30%;
+        left : 0;
     }
     .btn {
         cursor: pointer;
