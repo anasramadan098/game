@@ -12,6 +12,7 @@
     </div>
     <script src="content.js"></script>
     <script>
+    window.orientation.request(0);
     document.querySelector('.fullScreen').addEventListener('click',function(e) {
         this.parentElement.remove();
         if (document.fullscreenElement) {
