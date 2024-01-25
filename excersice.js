@@ -21,24 +21,14 @@ const excersices =  {
                 correctAnswer : 'حطأ'
             },
             {
-                Question : 'يجعل خدمه "DSL" اسرع لانها تستخدم اتصال ضيق النطاق ',
-                answers : ["صح","خطأ"],
-                correctAnswer : 'حطأ'
-            },
-            {
                 Question : 'خاصيه DSL تكون مطابقه للطلب الهاتفي ',
-                answers : ["صح","خطأ"],
-                correctAnswer : 'حطأ'
-            },
-            {
-                Question : 'يجعل خدمه "DSL" اسرع لانها تستخدم اتصال ضيق النطاق ',
                 answers : ["صح","خطأ"],
                 correctAnswer : 'حطأ'
             },
             {
                 Question : 'الاقمار الصناعيه تتصل بالانترنت عبر الاقمار الصناعيه التي تدور حول الارض سلكيا',
                 answers : ["صح","خطأ"],
-                correctAnswer : 'حطأ'
+                correctAnswer : 'صح'
             },
             {
                 Question : 'لايتطلب وجود كابل او خطوط هاتف ',
