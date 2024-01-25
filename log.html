@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="intro">
-    <video src="imgs/video-bg.mp4" muted autoplay loop ></video>
+    <div class="full">
+        <a href="#" class="fullScreen">Full Screen</a>
+    </div>
     <script src="content.js"></script>
-    <script src="main.js"></script>
+    <script>
+    document.querySelector('.fullScreen').addEventListener('click',function(e) {
+        this.parentElement.remove();
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+        // Create Elements
+        const video = document.createElement('video');
+        video.src = 'imgs/video-bg.mp4'
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        document.body.appendChild(video);
+
+        const script = document.createElement('script');
+        script.src = 'main.js';
+        document.body.appendChild(script); 
+    })
+    </script>
 </body>
 </html>
